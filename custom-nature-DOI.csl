@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
+  <info>
+    <title>Custom Nature Style with All Authors</title>
+    <id>http://www.zotero.org/styles/custom-nature-all-authors</id>
+    <link href="http://www.zotero.org/styles/custom-nature-all-authors" rel="self"/>
+    <link href="http://www.nature.com/nature/authors/gta/" rel="documentation"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="science"/>
+    <updated>2023-08-24T12:00:00+00:00</updated>
+  </info>
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+  <macro name="author">
+    <names variable="author">
+      <name sort-separator=", " delimiter=", " and="symbol" initialize-with="." delimiter-precedes-last="never" name-as-sort-order="all"/>
+    </names>
+  </macro>
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography et-al-min="100" et-al-use-first="99" second-field-align="flush" entry-spacing="0">
+    <layout suffix=".">
+      <text variable="citation-number" suffix="."/>
+      <group delimiter=" ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <group delimiter=", ">
+          <text variable="container-title" font-style="italic" form="short"/>
+          <text variable="volume"/>
+          <text variable="page"/>
+        </group>
+        <text macro="issued" prefix="(" suffix=")"/>
+      </group>
+      <text variable="DOI" prefix=". DOI: "/>
+    </layout>
+  </bibliography>
+</style>
